@@ -21,10 +21,10 @@ dotnet new sln -n CRS2TBBT4CeriumX.WebEngine
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 引导程序 & Bootloader 1 ----------
+@echo\&echo  ---------- 引导程序 & Bootstrapper 1 ----------
 
-dotnet new classlib -lang "C#" -f net5.0 -n CeriumX.WebEngine.Bootloader -o CeriumX.WebEngine.Bootloader\src
-dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add --in-root CeriumX.WebEngine.Bootloader\src
+dotnet new console -lang C# -f net6.0 -n CeriumX.WebEngine.Bootstrapper -o samples/CeriumX.WebEngine.Bootstrapper/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add -s samples samples/CeriumX.WebEngine.Bootstrapper/src
 
 
 
@@ -33,37 +33,79 @@ dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add --in-root CeriumX.WebEngine.Bootlo
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 项目类别 ﹫ ProjectCategory 10 ----------
+@echo\&echo  ---------- 示例程序 & samples 2 ----------
 
-dotnet new web -lang C# -f net6.0 -n LibrayName -o ProjectCategory/LibrayName/src
-dotnet sln SolutionName.sln add -s ProjectCategory ProjectCategory/LibrayName/src
+dotnet new wpf -lang "C#" -f net6.0 -n CeriumX.WebEngine.Appx4WPF -o samples/CeriumX.WebEngine.Appx4WPF/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add -s samples samples/CeriumX.WebEngine.Appx4WPF/src
 
-dotnet new blazorserver -lang C# -f net6.0 -n LibrayName -o ProjectCategory/LibrayName/src
-dotnet sln SolutionName.sln add -s ProjectCategory ProjectCategory/LibrayName/src
+dotnet new winforms -lang "C#" -f net6.0 -n CeriumX.WebEngine.Appx4WinForm -o samples/CeriumX.WebEngine.Appx4WinForm/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add -s samples samples/CeriumX.WebEngine.Appx4WinForm/src
 
-dotnet new blazorwasm -lang C# -f net6.0 -n LibrayName -o ProjectCategory/LibrayName/src
-dotnet sln SolutionName.sln add -s ProjectCategory ProjectCategory/LibrayName/src
 
-dotnet new mvc -lang C# -f net6.0 -n LibrayName -o ProjectCategory/LibrayName/src
-dotnet sln SolutionName.sln add -s ProjectCategory ProjectCategory/LibrayName/src
 
-dotnet new webapi -lang "C#" -f net6.0 --exclude-launch-settings --no-https -n LibrayName -o LibrayName/src
-dotnet sln SolutionName.sln add --in-root LibrayName/src
 
-dotnet new winforms -lang "C#" -f net6.0 -n LibrayName -o samples/LibrayName/src
-dotnet sln SolutionName.sln add -s samples samples/LibrayName/src
 
-dotnet new wpf -lang "C#" -f net6.0 -n LibrayName -o ProjectCategory/LibrayName/src
-dotnet sln SolutionName.sln add -s ProjectCategory ProjectCategory/LibrayName/src
+@echo.
+@echo.
+@echo.
+@echo\&echo  ---------- 接口抽象 ﹫ Abstractions 1 ----------
 
-dotnet new console -lang C# -f net6.0 -n LibrayName -o samples/LibrayName/src
-dotnet sln SolutionName.sln add -s samples samples/LibrayName/src
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.WebEngine.Abstractions -o CeriumX.WebEngine.Abstractions/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add --in-root CeriumX.WebEngine.Abstractions/src
 
-dotnet new classlib -lang "C#" -f net6.0 -n LibrayName -o LibrayName/src
-dotnet sln SolutionName.sln add --in-root LibrayName/src
 
-dotnet new classlib -lang "C#" -f net6.0 -n LibrayName -o ProjectCategory/LibrayName/src
-dotnet sln SolutionName.sln add -s ProjectCategory ProjectCategory/LibrayName/src
+
+
+
+@echo.
+@echo.
+@echo.
+@echo\&echo  ---------- WEB引擎实现与扩展 & WebView2集成 ﹫ WebView2 3 ----------
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.WebEngine.WebView2 -o WebView2/CeriumX.WebEngine.WebView2/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add -s WebView2 WebView2/CeriumX.WebEngine.WebView2/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.WebEngine.WebView2.GenericHost -o WebView2/CeriumX.WebEngine.WebView2.GenericHost/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add -s WebView2 WebView2/CeriumX.WebEngine.WebView2.GenericHost/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.WebEngine.WebView2.CeriumXHost -o WebView2/CeriumX.WebEngine.WebView2.CeriumXHost/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add -s WebView2 WebView2/CeriumX.WebEngine.WebView2.CeriumXHost/src
+
+
+
+
+
+@echo.
+@echo.
+@echo.
+@echo\&echo  ---------- WEB引擎实现与扩展 & CefSharp集成 ﹫ CefSharp 3 ----------
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.WebEngine.CefSharp -o CefSharp/CeriumX.WebEngine.CefSharp/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add -s CefSharp CefSharp/CeriumX.WebEngine.CefSharp/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.WebEngine.CefSharp.GenericHost -o CefSharp/CeriumX.WebEngine.CefSharp.GenericHost/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add -s CefSharp/ CefSharp/CeriumX.WebEngine.CefSharp.GenericHost/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.WebEngine.CefSharp.CeriumXHost -o CefSharp/CeriumX.WebEngine.CefSharp.CeriumXHost/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add -s CefSharp CefSharp/CeriumX.WebEngine.CefSharp.CeriumXHost/src
+
+
+
+
+
+@echo.
+@echo.
+@echo.
+@echo\&echo  ---------- WEB引擎实现与扩展 & ChromiumFX集成 ﹫ ChromiumFX 3 ----------
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.WebEngine.ChromiumFX -o ChromiumFX/CeriumX.WebEngine.ChromiumFX/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add -s ChromiumFX ChromiumFX/CeriumX.WebEngine.ChromiumFX/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.WebEngine.ChromiumFX.GenericHost -o ChromiumFX/CeriumX.WebEngine.ChromiumFX.GenericHost/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add -s ChromiumFX ChromiumFX/CeriumX.WebEngine.ChromiumFX.GenericHost/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.WebEngine.ChromiumFX.CeriumXHost -o ChromiumFX/CeriumX.WebEngine.ChromiumFX.CeriumXHost/src
+dotnet sln CRS2TBBT4CeriumX.WebEngine.sln add -s ChromiumFX ChromiumFX/CeriumX.WebEngine.ChromiumFX.CeriumXHost/src
 
 
 
