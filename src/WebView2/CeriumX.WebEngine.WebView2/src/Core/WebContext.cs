@@ -6,9 +6,9 @@
 //=========================================================================
 //**   Copyright © 蟑螂·魂 2022 -- Support 华夏银河空间联盟
 //=========================================================================
-// 文件名称：IWebWindowFactory.cs
+// 文件名称：WebContext.cs
 // 项目名称：Web引擎服务产品中间件
-// 创建时间：2022-10-13 14:00:11
+// 创建时间：2022-10-13 16:03:02
 // 创建人员：宋杰军
 // 电子邮件：cockroach888@outlook.com
 // 负责人员：宋杰军
@@ -18,26 +18,26 @@
 // 修改人员：
 // 修改内容：
 // ========================================================================
-namespace CeriumX.WebEngine.Abstractions;
+namespace CeriumX.WebEngine.WebView2;
 
 /// <summary>
-/// 浏览器窗口创建工厂接口
+/// 内部的Web交互上下文
 /// </summary>
-public interface IWebWindowFactory : IDisposable
+internal sealed class WebContext
 {
     /// <summary>
-    /// 初始化运行环境
+    /// 内部的Web交互上下文
     /// </summary>
-    /// <returns>表示响应当前异步操作的支持对象</returns>
-    Task InitializeEnvironmentAsync();
+    /// <param name="nlogRulePrefixName">NLog配置规则名前缀，如：Monica.*，传递 Monica 即可。</param>
+    public WebContext(string nlogRulePrefixName)
+    {
+        Logger = NLog.LogManager.GetLogger($"{nlogRulePrefixName}.Cockroach.{Guid.NewGuid().GetHashCode()}");
+        Logger.Info("实例化浏览器上下文对象。");
+    }
+
 
     /// <summary>
-    /// 创建一个浏览器窗口
+    /// 日志记录器
     /// </summary>
-    /// <remarks>控件类型必须为 System.Windows.Forms.Control 或者 System.Windows.UIElement 两者之一</remarks>
-    /// <typeparam name="TControlType">用于作为浏览器控件的承载控件类型</typeparam>
-    /// <param name="option">WebEngine创建选项(参数)</param>
-    /// <returns>浏览器窗口</returns>
-    Task<IWebWindow<TControlType>> CreateAsync<TControlType>(WebOptions option)
-        where TControlType : class;
+    public NLog.Logger Logger { get; }
 }
