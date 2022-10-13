@@ -42,7 +42,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>WebEngine WEB引擎 WebView2 CEF CefSharp ChromiumFX 浏览器 嵌入式浏览器 混合应用 混合开发</PackageTags>
-		<PackageReleaseNotes>暂无发布日志。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为Web引擎服务产品中间件基于ChromiumFX实现的扩展库，提供与通用主机(GenericHost)的交互能力，为通用主机注入浏览器的功能支持。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.WebEngine.ChromiumFX.GenericHost</PackageId>-->
 	</PropertyGroup>

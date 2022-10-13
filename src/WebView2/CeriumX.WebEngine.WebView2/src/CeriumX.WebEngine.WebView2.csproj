@@ -42,7 +42,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>WebEngine WEB引擎 WebView2 CEF CefSharp ChromiumFX 浏览器 嵌入式浏览器 混合应用 混合开发</PackageTags>
-		<PackageReleaseNotes>暂无发布日志。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为Web引擎服务产品中间件基于WebView2的实现，微软至力于发展以Chromium为内核的Edge游览器，在此强大后盾的基础上，诞生了WebView2控件，并且在微软自身的各种产品或业务中均有其身影，如最近如火如荼的Blazor框架、宇宙最强IDE等；因此，大树底下好乘凉，一切尽在你懂得中。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.WebEngine.WebView2</PackageId>-->
 	</PropertyGroup>
