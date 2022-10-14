@@ -33,7 +33,7 @@ public static class WebWindowFactoryProvider
     /// <param name="userDataFolder">用户数据目录，如果为空则默认存储在运行时的UserData目录下。</param>
     /// <param name="nlogRulePrefixName">NLog配置规则名前缀，如：Monica.*，传递 Monica 即可。</param>
     /// <returns>浏览器窗口创建工厂</returns>
-    public static IWebWindowFactory CreateRoseWindowFactory(string browserExecutableFolder, string? userDataFolder = null, string? nlogRulePrefixName = null)
+    public static IWebWindowFactory CreateWebWindowFactory(string browserExecutableFolder, string? userDataFolder = null, string? nlogRulePrefixName = null)
     {
         return new WebWindowFactory(browserExecutableFolder, userDataFolder, nlogRulePrefixName);
     }
