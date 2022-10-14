@@ -73,4 +73,9 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\CeriumX.WebEngine.Abstractions\src\CeriumX.WebEngine.Abstractions.csproj" />
+	  <ProjectReference Include="..\..\..\WebView2\CeriumX.WebEngine.WebView2\src\CeriumX.WebEngine.WebView2.csproj" />
+	</ItemGroup>
+
 </Project>

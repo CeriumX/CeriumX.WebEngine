@@ -4,9 +4,77 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CeriumX.WebEngine.Appx4WPF"
+        xmlns:commands="clr-namespace:CeriumX.WebEngine.Appx4WPF.Commands"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="900" Width="1440"
+        Loaded="Window_Loaded">
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static commands:BrowserCommands.GoBackCommand}" Executed="GoBack_Click" />
+        <CommandBinding Command="{x:Static commands:BrowserCommands.GoForwardCommand}" Executed="GoForward_Click" />
+    </Window.CommandBindings>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <Border Padding="0,0,0,1" BorderThickness="0,0,0,1" BorderBrush="Blue">
+                <Grid Height="35">
+                    <TextBox Grid.Column="0" x:Name="txtAddress" Text="https://news.baidu.com" VerticalContentAlignment="Center" />
+                    <Button Grid.Column="1" x:Name="btnTest" Content="GO" Click="BtnTest_Click" />
 
-    </Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </Border>
+        </DockPanel>
+
+        <DockPanel DockPanel.Dock="Top">
+            <Border Padding="0,0,0,1" BorderThickness="0,0,0,1" BorderBrush="Blue">
+                <ToolBarPanel x:Name="RibbonRegion" Margin="1,0,1,0" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                    <!--<ToolBar x:Name="mainToolBar">
+                    <Grid>
+                        <Button Grid.Column="0" Content="测试1" />
+                        <Button Grid.Column="1" Content="测试2" />
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ToolBar>-->
+                    <ToolBar>
+                        <Button Content="后退" Width="55" Height="25" Command="{x:Static commands:BrowserCommands.GoBackCommand}" />
+                        <Button Content="前进" Width="55" Height="25" Command="{x:Static commands:BrowserCommands.GoForwardCommand}" />
+                        <Button Content="测试3" Width="55" Height="25" />
+                        <Button Content="测试4" Width="55" Height="25" />
+                    </ToolBar>
+                    <ToolBar>
+                        <Button Content="console.log" Width="75" Height="25" x:Name="BtnConsoleLog" Click="BtnConsoleLog_Click" />
+                        <Button Content="测试2" Width="55" Height="25" />
+                        <Button Content="测试3" Width="55" Height="25" />
+                        <Button Content="测试4" Width="55" Height="25" />
+                    </ToolBar>
+                    <ToolBar>
+                        <Button Content="DevTool" Width="75" Height="25" x:Name="BtnDevTool" Click="BtnDevTool_Click" />
+                        <Button Content="TaskMgr" Width="75" Height="25" x:Name="BtnTaskMgr" Click="BtnTaskMgr_Click" />
+                        <Button Content="测试3" Width="55" Height="25" />
+                        <Button Content="测试4" Width="55" Height="25" />
+                    </ToolBar>
+                </ToolBarPanel>
+            </Border>
+        </DockPanel>
+
+        <DockPanel DockPanel.Dock="Bottom">
+            <Border Padding="0,1,0,0" BorderThickness="0,1,0,0" BorderBrush="Blue">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" DockPanel.Dock="Bottom" Height="30">
+                    <ContentControl x:Name="BottomRegion">
+                        <StatusBar VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Background="Transparent">
+                            <Label x:Name="lblStatus" Content="我是一条很长很长的状态栏" />
+                        </StatusBar>
+                    </ContentControl>
+                </StackPanel>
+            </Border>
+        </DockPanel>
+
+        <Border BorderBrush="Silver" x:Name="mainContent"></Border>
+    </DockPanel>
 </Window>
