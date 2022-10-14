@@ -100,6 +100,11 @@ internal sealed class WebWindowFactory : IWebWindowFactory
     public async Task<IWebWindow<TControlType>> CreateAsync<TControlType>(WebOptions option)
         where TControlType : class
     {
+        if (_envInitialized is 0)
+        {
+            throw new Exception($"对不起！浏览器运行环境未初始化，请先执行InitializeEnvironmentAsync初始化运行环境。");
+        }
+
         _context.Logger.Info($"浏览器窗口创建操作被执行。");
 
         await Task.Delay(0).ConfigureAwait(false);
