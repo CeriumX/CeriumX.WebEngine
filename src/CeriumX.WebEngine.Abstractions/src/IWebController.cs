@@ -25,7 +25,9 @@ namespace CeriumX.WebEngine.Abstractions;
 /// <summary>
 /// CSharp对象注册控制器接口
 /// </summary>
-[InterfaceType(interfaceType: ComInterfaceType.InterfaceIsDual)]
+#pragma warning disable CS0618 // 类型或成员已过时
+[InterfaceType(ComInterfaceType.InterfaceIsDual)]
+#pragma warning restore CS0618 // 类型或成员已过时
 [ComVisible(true)]
 public interface IWebController : IDisposable
 {
