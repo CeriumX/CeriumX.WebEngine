@@ -57,8 +57,7 @@ public partial class MainWindow : Window
 
             _webFactory = WebWindowFactoryProvider.CreateWebWindowFactory(
                 browserExecutableFolder: webViewFolder,
-                userDataFolder: userDataFolder,
-                nlogRulePrefixName: "Monica");
+                userDataFolder: userDataFolder);
             await _webFactory.InitializeEnvironmentAsync().ConfigureAwait(false);
 
             WebOptions options = WebOptions.Create(@"http://localhost");
