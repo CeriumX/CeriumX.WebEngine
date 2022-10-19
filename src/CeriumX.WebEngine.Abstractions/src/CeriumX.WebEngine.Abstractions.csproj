@@ -12,8 +12,8 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<!--<RootNamespace>CeriumX.WebEngine.Abstractions</RootNamespace>
 		<AssemblyName>CeriumX.WebEngine.Abstractions</AssemblyName>-->
-		<AssemblyVersion>1.0.0</AssemblyVersion>
-		<FileVersion>1.0.0</FileVersion>
+		<AssemblyVersion>1.1.0</AssemblyVersion>
+		<FileVersion>1.1.0</FileVersion>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
@@ -42,7 +42,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>WebEngine WEB引擎 WebView2 CEF CefSharp ChromiumFX 浏览器 嵌入式浏览器 混合应用 混合开发</PackageTags>
-		<PackageReleaseNotes>当前封装库为Web引擎服务产品中间件的抽象层，主要定义统一的、规范化的API接口，及其公共功能和扩展支持等。</PackageReleaseNotes>
+		<PackageReleaseNotes>将收到的JSON字符串消息转换为指定的数据模型。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.WebEngine.Abstractions</PackageId>-->
 	</PropertyGroup>
@@ -74,6 +74,10 @@
 
 	<ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
 		<PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0' or '$(TargetFramework)'=='netstandard2.1'">
+		<PackageReference Include="System.Text.Json" Version="6.0.0" />
 	</ItemGroup>
 
 </Project>

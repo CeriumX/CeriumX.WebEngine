@@ -18,6 +18,8 @@
 // 修改人员：
 // 修改内容：
 // ========================================================================
+using System.Text.Json;
+
 namespace CeriumX.WebEngine.Abstractions;
 
 /// <summary>
@@ -40,4 +42,20 @@ public sealed class WebMessageReceivedWebArgs : EventArgs
     /// </summary>
     /// <remarks>当确定收到的消息为字符串内容时</remarks>
     public Func<string?>? TryGetMessageAsString { get; set; }
+
+
+    /// <summary>
+    /// 将收到的JSON字符串消息转换为指定的数据模型
+    /// </summary>
+    /// <typeparam name="TModel">数据模型泛型</typeparam>
+    /// <returns>数据模型</returns>
+    public TModel? ConvertJsonMessageTo<TModel>()
+    {
+        if (MessageAsJson is not null)
+        {
+            return JsonSerializer.Deserialize<TModel>(MessageAsJson);
+        }
+
+        return default;
+    }
 }
