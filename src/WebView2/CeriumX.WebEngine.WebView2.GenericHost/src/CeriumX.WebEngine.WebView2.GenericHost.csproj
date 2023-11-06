@@ -12,8 +12,8 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<!--<RootNamespace>CeriumX.WebEngine.WebView2.GenericHost</RootNamespace>
 		<AssemblyName>CeriumX.WebEngine.WebView2.GenericHost</AssemblyName>-->
-		<AssemblyVersion>7.0.0</AssemblyVersion>
-		<FileVersion>7.0.0</FileVersion>
+		<AssemblyVersion>7.0.1</AssemblyVersion>
+		<FileVersion>7.0.1</FileVersion>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
@@ -42,7 +42,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>WebEngine WEB引擎 WebView2 CEF CefSharp ChromiumFX 浏览器 嵌入式浏览器 混合应用 混合开发</PackageTags>
-		<PackageReleaseNotes>全面进入.NET 7时代，将深入研习部分技术体系及源码，增加net7.0独立编译支持。</PackageReleaseNotes>
+		<PackageReleaseNotes>同步上游版本更新。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.WebEngine.WebView2.GenericHost</PackageId>-->
 	</PropertyGroup>
