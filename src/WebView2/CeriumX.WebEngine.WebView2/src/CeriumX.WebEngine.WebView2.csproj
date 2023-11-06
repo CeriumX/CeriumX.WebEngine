@@ -14,8 +14,8 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<!--<RootNamespace>CeriumX.WebEngine.WebView2</RootNamespace>
 		<AssemblyName>CeriumX.WebEngine.WebView2</AssemblyName>-->
-		<AssemblyVersion>7.0.0</AssemblyVersion>
-		<FileVersion>7.0.0</FileVersion>
+		<AssemblyVersion>7.0.1</AssemblyVersion>
+		<FileVersion>7.0.1</FileVersion>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
@@ -44,7 +44,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>WebEngine WEB引擎 WebView2 CEF CefSharp ChromiumFX 浏览器 嵌入式浏览器 混合应用 混合开发</PackageTags>
-		<PackageReleaseNotes>全面进入.NET 7时代，将深入研习部分技术体系及源码，增加net7.0独立编译支持。</PackageReleaseNotes>
+		<PackageReleaseNotes>更新Microsoft.Web.WebView2引用到1.0.2088.41版本，同时着手增加新功能支持。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.WebEngine.WebView2</PackageId>-->
 	</PropertyGroup>
@@ -75,8 +75,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1418.22" />
-	  <PackageReference Include="NLog" Version="5.0.5" />
+	  <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2088.41" />
+	  <PackageReference Include="NLog" Version="5.2.5" />
 	</ItemGroup>
 
 	<ItemGroup>
