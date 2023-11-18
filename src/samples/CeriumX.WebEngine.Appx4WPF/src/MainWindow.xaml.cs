@@ -52,8 +52,8 @@ public partial class MainWindow : Window
 
         try
         {
-            string webViewFolder = System.IO.Path.GetFullPath("d:/data/WebView2Fixed");
-            string userDataFolder = System.IO.Path.GetFullPath("d:/data/WebView2Fixed/UserData");
+            string webViewFolder = System.IO.Path.GetFullPath("d:/WebView2Runtime");
+            string userDataFolder = System.IO.Path.GetFullPath("d:/WebView2Runtime/UserData");
 
             _webFactory = WebWindowFactoryProvider.CreateWebWindowFactory(
                 browserExecutableFolder: webViewFolder,
