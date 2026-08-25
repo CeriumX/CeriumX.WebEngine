@@ -11,7 +11,7 @@ git push github
 @echo\&echo 推送到 Gitee 远程仓库
 git push gitee
 
-@echo\&echo 推送到 AtomGit & GitCode 远程仓库
+@echo\&echo 推送到 AtomGit and GitCode 远程仓库
 git push gitcode
 
 ::@echo\&echo 推送到 Origin 远程仓库
