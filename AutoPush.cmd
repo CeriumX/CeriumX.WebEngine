@@ -8,20 +8,20 @@ set basedir
 @echo\&echo 推送到 GitHub 远程仓库
 git push github
 
+@echo\&echo 推送到 Gitee 远程仓库
+git push gitee
+
+@echo\&echo 推送到 AtomGit & GitCode 远程仓库
+git push gitcode
+
+::@echo\&echo 推送到 Origin 远程仓库
+::git push origin
+
 ::@echo\&echo 推送到 Bitbucket 远程仓库
 ::git push bitbucket
 
 ::@echo\&echo 推送到 Azure 远程仓库
 ::git push azure
-
-@echo\&echo 推送到 Gitee 远程仓库
-git push gitee
-
-::@echo\&echo 推送到 Origin 远程仓库
-::git push origin
-
-@echo\&echo 推送到 GitCode 远程仓库
-git push gitcode
 
 @echo\&echo 查看本地仓库状态
 git status
